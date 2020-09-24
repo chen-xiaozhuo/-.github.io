@@ -168,101 +168,20 @@
     <div class="article-meta">
       <a href="/-.github.io/2020/09/24/b/" class="article-date">
   <time datetime="2020-09-24T13:22:26.000Z" itemprop="datePublished">2020-09-24</time>
-</a>    
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/-.github.io/categories/git/">git</a>
+  </div>
+   
     </div>
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>git clone 项目地址<br>2.git status<br>3.git branch<br>4.复制文件到本地目录<br>5.git status<br>6.git add .<br>7.git commit -m ‘上传’<br>8.git push<br>查看分支：git branch<br>创建分支：git branch<br>切换分支：git checkout<br>创建+切换分支：git checkout -b<br>合并某分支到当前分支：git merge<br>删除分支：git branch -d<br>强制删除分支：git branch -D<br>删除远程分支：git push origin —delete<br>撤销单个文件的修改：git checkout — readme.txt<br>撤销所有文件的修改：git checkout — *<br>查看提交历史：git log<br>查看命令历史：git reflog<br>查看提交内容：git log -p<br>查看提交文件：git log —stat<br>克隆分支：git clone<br>设置用户名：git config —global user.name “Your Name”<br>设置邮箱：git config —global user.email<br>git<br>拉取远程分支到本地：<br>git fetch<br>gcheckout -b &lt;分支名&gt;<br>代码commit后，回退操作<br>git reset —mixed：此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息<br>git reset —soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可<br>git reset —hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容<br>回退到上一个版本：git reset —mixed HEAD^<br>回退到指定版本：git reset —mixed 3628164<br>将另一个本地分支的commit修改应用到当前分支：git cherry-pick 5bd9fac634dbc9b4a5769ee521cfd15d433a0213</p>
-<p>git reset –soft 144960dc219b468e8b55d08d8fe6bb51d3d29916</p>
-<p>查看、添加、提交、删除、找回，重置修改文件</p>
-<p>git help # 显示command的help</p>
-<p>git show # 显示某次提交的内容 git show $id</p>
-<p>git co – # 抛弃工作区修改</p>
-<p>git co . # 抛弃工作区修改</p>
-<p>git add # 将工作文件修改提交到本地暂存区</p>
-<p>git add . # 将所有修改过的工作文件提交暂存区</p>
-<p>git rm # 从版本库中删除文件</p>
-<p>git rm –cached # 从版本库中删除文件，但不删除文件</p>
-<p>git reset # 从暂存区恢复到工作文件</p>
-<p>git reset – . # 从暂存区恢复到工作文件</p>
-<p>git reset –hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
-<p>git ci git ci . git ci -a # 将git add, git rm和git ci等操作都合并在一起做　　　　　　　git ci -am “some comments”</p>
-<p>git ci –amend # 修改最后一次提交记录</p>
-<p>git revert &lt;$id&gt; # 恢复某次提交的状态，恢复动作本身也创建次提交对象</p>
-<p>git revert HEAD # 恢复最后一次提交的状态</p>
-<p>查看文件diff</p>
-<p>git diff # 比较当前文件和暂存区文件差异 git diff</p>
-<p>git diff # 比较两次提交之间的差异</p>
-<p>git diff … # 在两个分支之间比较</p>
-<p>git diff –staged # 比较暂存区和版本库差异</p>
-<p>git diff –cached # 比较暂存区和版本库差异</p>
-<p>git diff –stat # 仅仅比较统计信息</p>
-<p>查看提交记录</p>
-<p>git log git log # 查看该文件每次提交记录</p>
-<p>git log -p # 查看每次详细修改内容的diff</p>
-<p>git log -p -2 # 查看最近两次详细修改内容的diff</p>
-<p>git log –stat #查看提交统计信息</p>
-<p>tig</p>
-<p>Mac上可以使用tig代替diff和log，brew install tig</p>
-<p>Git 本地分支管理</p>
-<p>查看、切换、创建和删除分支</p>
-<p>git br -r # 查看远程分支</p>
-<p>git br <new_branch> # 创建新的分支</p>
-<p>git br -v # 查看各个分支最后提交信息</p>
-<p>git br –merged # 查看已经被合并到当前分支的分支</p>
-<p>git br –no-merged # 查看尚未被合并到当前分支的分支</p>
-<p>git co # 切换到某个分支</p>
-<p>git co -b <new_branch> # 创建新的分支，并且切换过去</p>
-<p>git co -b <new_branch> # 基于branch创建新的new_branch</p>
-<p>git co $id # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除</p>
-<p>git co $id -b <new_branch> # 把某次历史提交记录checkout出来，创建成一个分支</p>
-<p>git br -d # 删除某个分支</p>
-<p>git br -D # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)</p>
-<p>分支合并和rebase</p>
-<p>git merge # 将branch分支合并到当前分支</p>
-<p>git merge origin/master –no-ff # 不要Fast-Foward合并，这样可以生成merge提交</p>
-<p>git rebase master # 将master rebase到branch，相当于： git co &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge</p>
-<p>Git补丁管理(方便在多台机器上开发同步时用)</p>
-<p>git diff &gt; …/sync.patch # 生成补丁</p>
-<p>git apply …/sync.patch # 打补丁</p>
-<p>git apply –check …/sync.patch #测试补丁能否成功</p>
-<p>Git暂存管理</p>
-<p>git stash # 暂存</p>
-<p>git stash list # 列所有stash</p>
-<p>git stash apply # 恢复暂存的内容</p>
-<p>git stash drop # 删除暂存区</p>
-<p>Git远程分支管理</p>
-<p>git pull # 抓取远程仓库所有分支更新并合并到本地</p>
-<p>git pull –no-ff # 抓取远程仓库所有分支更新并合并到本地，不要快进合并</p>
-<p>git fetch origin # 抓取远程仓库更新</p>
-<p>git merge origin/master # 将远程主分支合并到本地当前分支</p>
-<p>git co –track origin/branch # 跟踪某个远程分支创建相应的本地分支</p>
-<p>git co -b <local_branch> origin/<remote_branch> # 基于远程分支创建本地分支，功能同上</p>
-<p>git push # push所有分支</p>
-<p>git push origin master # 将本地主分支推到远程主分支</p>
-<p>git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</p>
-<p>git push origin <local_branch> # 创建远程分支， origin是远程仓库名</p>
-<p>git push origin <local_branch>:<remote_branch> # 创建远程分支</p>
-<p>git push origin :<remote_branch> #先删除本地分支(git br -d )，然后再push删除远程分支</p>
-<p>Git远程仓库管理</p>
-<p>GitHub</p>
-<p>git remote -v # 查看远程服务器地址和仓库名称</p>
-<p>git remote show origin # 查看远程服务器仓库状态</p>
-<p>git remote add origin git@ github:robbin/robbin_site.git # 添加远程仓库地址</p>
-<p>git remote set-url origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址) git remote rm # 删除远程仓库</p>
-<p>创建远程仓库</p>
-<p>git clone –bare robbin_site robbin_site.git # 用带版本的项目创建纯版本仓库</p>
-<p>scp -r my_project.git git@ git.csdn.net:~ # 将纯仓库上传到服务器上</p>
-<p>mkdir robbin_site.git &amp;&amp; cd robbin_site.git &amp;&amp; git –bare init # 在服务器创建纯仓库</p>
-<p>git remote add origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址</p>
-<p>git push -u origin master # 客户端首次提交</p>
-<p>git push -u origin develop # 首次将本地develop分支提交到远程develop分支，并且track</p>
-<p>git remote set-head origin master # 设置远程仓库的HEAD指向master分支</p>
-<p>也可以命令设置跟踪远程库和本地库</p>
-<p>git branch –set-upstream master origin/master</p>
-<p>git branch –set-upstream develop origin/develop</p>
- 
+  <h1 id="git-clone-项目地址"><a href="#git-clone-项目地址" class="headerlink" title="git clone 项目地址"></a>git clone 项目地址</h1><p>2.git status<br>3.git branch<br>4.复制文件到本地目录</p> 
+      <a class="article-more-link" href="/-.github.io/2020/09/24/b/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
@@ -272,6 +191,8 @@
     
     <footer class="article-footer">
        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/-.github.io/tags/git/" rel="tag">git</a></li></ul>
+
     </footer>
   </div>
 
@@ -308,140 +229,13 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <hr>
-<p>===控制器===</p>
-<p>&lt;?php</p>
+  <h1 id="控制器"><a href="#控制器" class="headerlink" title="===控制器==="></a>===控制器===</h1><p>&lt;?php</p>
 <p>namespace App\Http\Controllers;</p>
-<p>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;<br>class Test extends Controller<br>{<br>    //注册<br>    public function regData(Request $request){<br>        //验证器验证<br>        $validator = Validator::make($request-&gt;all(), [<br>            ‘name’ =&gt; ‘required’,<br>            ‘pwd’ =&gt; ‘required’,<br>            ‘phone’ =&gt; ‘required’,<br>            ‘qq’ =&gt; ‘required’,<br>        ]);</p>
-<pre><code>    if ($validator-&gt;fails()) &#123;
-        $msg=$validator-&gt;errors()-&gt;first();
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
-    &#125;
-    //拼写入库的数组
-    $arr[&#39;name&#39;]=$request[&#39;name&#39;];
-    $arr[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-    $arr[&#39;phone&#39;]=$request[&#39;phone&#39;];
-    $arr[&#39;qq&#39;]=$request[&#39;qq&#39;];
-    $data=Test1::regData($arr);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;注册成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;注册失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//登录
-public function login(Request $request)&#123;
-    //验证器验证
-    $validator = Validator::make($request-&gt;all(), [
-        &#39;name&#39; =&gt; &#39;required&#39;,
-        &#39;pwd&#39; =&gt; &#39;required&#39;,
-    ]);
-
-    if ($validator-&gt;fails()) &#123;
-        $msg=$validator-&gt;errors()-&gt;first();
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
-    &#125;
-    //拼写登录的数组
-    $arr[&#39;name&#39;]=$request[&#39;name&#39;];
-    $arr[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-
-    $arr2[&#39;qq&#39;]=$request[&#39;name&#39;];
-    $arr2[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-    $data=Test1::loginData($arr,$arr2);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;登录成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;登录失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//展示
-public function lists()&#123;
-    $data=Test1::listData();
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;展示成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;展示失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//删除
-public function delData(Request $request)&#123;
-    $data=Test1::delData($request[&#39;id&#39;]);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;删除成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;删除失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//详情
-public function infoData(Request $request)&#123;
-    $data=Test1::infoData($request[&#39;id&#39;]);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;查看详情成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;查看详情失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//修改
-public function saveData(Request $request)&#123;
-    //验证器验证
-    $validator = Validator::make($request-&gt;all(), [
-        &#39;name&#39; =&gt; &#39;required&#39;,
-        &#39;pwd&#39; =&gt; &#39;required&#39;,
-        &#39;phone&#39; =&gt; &#39;required&#39;,
-        &#39;qq&#39; =&gt; &#39;required&#39;,
-        &#39;id&#39; =&gt; &#39;required&#39;,
-    ]);
-
-    if ($validator-&gt;fails()) &#123;
-        $msg=$validator-&gt;errors()-&gt;first();
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
-    &#125;
-    //拼写修改的数组
-    $id=$request[&#39;id&#39;];
-    $arr[&#39;name&#39;]=$request[&#39;name&#39;];
-    $arr[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-    $arr[&#39;phone&#39;]=$request[&#39;phone&#39;];
-    $arr[&#39;qq&#39;]=$request[&#39;qq&#39;];
-    $data=Test1::saveData($id,$arr);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;修改成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;修改失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;</code></pre>
-<p>}</p>
-<p>===模型层===<br>&lt;?php</p>
-<p>namespace App;</p>
-<p>use Illuminate\Database\Eloquent\Model;</p>
-<p>class Test1 extends Model<br>{<br>    protected $table=’test’;<br>    public $timestamps=false;<br>    //注册方法<br>    static public function regData($arr){<br>        return self::insert($arr);<br>    }<br>    //登录<br>    static public function loginData($arr,$arr2){<br>        $res=self::where($arr)-&gt;first();</p>
-<pre><code>    $res2=self::where($arr2)-&gt;first();
-    if (empty($res)&amp;&amp;empty($res2))&#123;
-        return 0; //登录失败
-    &#125;else&#123;
-        if ($res) return $res;
-        if ($res2) return $res2;
-    &#125;
-&#125;
-//展示
-static public function listData()&#123;
-    return self::get();
-&#125;
-//删除
-static public function delData($id)&#123;
-    return self::where(&#39;id&#39;,&#39;=&#39;,$id)-&gt;delete();
-&#125;
-//详情
-static public function infoData($id)&#123;
-    return self::where(&#39;id&#39;,&#39;=&#39;,$id)-&gt;first();
-&#125;
-//修改
-static public function saveData($id,$arr)&#123;
-    return self::where(&#39;id&#39;,&#39;=&#39;,$id)-&gt;update($arr);
-&#125;</code></pre>
-<p>}</p>
-<p>===路由===<br>Route::post(‘regadd’,‘Test@regData’);//注册<br>Route::post(‘loginadd’,‘Test@login’);//登录<br>Route::get(‘list’,‘Test@lists’);//展示<br>Route::get(‘del’,‘Test@delData’);//删除<br>Route::get(‘info’,‘Test@infoData’);//详情<br>Route::post(‘save’,‘Test@saveData’);//修改</p>
-<hr>
- 
+<p>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;</p> 
+      <a class="article-more-link" href="/-.github.io/2020/09/23/%E6%91%98%E5%BD%95/"
+        >阅读更多...</a
+      >
+       
       <!-- reward -->
       
     </div>
