@@ -11,20 +11,20 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    laravel |  blog
+    laravel  CRUD |  blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
   <link rel="shortcut icon" href="favicon.ico" />
   
   
-<link rel="stylesheet" href="/-.github.io/dist/main.css">
+<link rel="stylesheet" href="cxz-blog.github.io/dist/main.css">
 
   
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
 
   
-<link rel="stylesheet" href="/-.github.io/css/custom.css">
+<link rel="stylesheet" href="cxz-blog.github.io/css/custom.css">
 
   
   
@@ -57,22 +57,26 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  laravel
+  laravel  CRUD
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/-.github.io/2020/09/23/%E6%91%98%E5%BD%95/" class="article-date">
+      <a href="cxz-blog.github.io/2020/09/23/%E6%91%98%E5%BD%95/" class="article-date">
   <time datetime="2020-09-23T06:38:47.000Z" itemprop="datePublished">2020-09-23</time>
-</a>   
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="cxz-blog.github.io/categories/laravel/">laravel</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">905</span>
+            <span class="post-count">904</span>
         </span>
     </span>
 
@@ -88,19 +92,13 @@
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="控制器"><a href="#控制器" class="headerlink" title="===控制器==="></a>===控制器===</h1><p>&lt;?php</p>
-<p>namespace App\Http\Controllers;</p>
-<p>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;</p>
-<a id="more"></a>
-<p>class Test extends Controller<br>{<br>    //注册<br>    public function regData(Request $request){<br>        //验证器验证<br>        $validator = Validator::make($request-&gt;all(), [<br>            ‘name’ =&gt; ‘required’,<br>            ‘pwd’ =&gt; ‘required’,<br>            ‘phone’ =&gt; ‘required’,<br>            ‘qq’ =&gt; ‘required’,<br>        ]);</p>
+  <p> ===控制器===<a id="more"></a><br>&lt;?php<br>namespace App\Http\Controllers;<br>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;<br>class Test extends Controller<br>{<br>    //注册<br>    public function regData(Request $request){<br>        //验证器验证<br>        $validator = Validator::make($request-&gt;all(), [<br>            ‘name’ =&gt; ‘required’,<br>            ‘pwd’ =&gt; ‘required’,<br>            ‘phone’ =&gt; ‘required’,<br>            ‘qq’ =&gt; ‘required’,<br>        ]);</p>
 <pre><code>    if ($validator-&gt;fails()) &#123;
         $msg=$validator-&gt;errors()-&gt;first();
         return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
@@ -299,22 +297,24 @@ static public function saveData($id,$arr)&#123;
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cxz-blog/-.github.io/2020/09/23/%E6%91%98%E5%BD%95/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cxz-blog.github.io/2020/09/23/%E6%91%98%E5%BD%95/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="cxz-blog.github.io/tags/laravel/" rel="tag">laravel</a></li></ul>
+
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
-      <a href="/-.github.io/2020/09/24/b/" class="article-nav-link">
+      <a href="cxz-blog.github.io/2020/09/24/b/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            git命令
+            git
           
         </div>
       </a>
@@ -335,7 +335,7 @@ static public function saveData($id,$arr)&#123;
     app_id: "",
     app_key: "",
     path: window.location.pathname,
-    avatar: "monsterid",
+    avatar: "https://valine.js.org/avatar.html",
     placeholder: "给我的文章加点评论吧~",
     recordIP: true,
   });
@@ -441,37 +441,33 @@ static public function saveData($id,$arr)&#123;
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/-.github.io/"><img src="images/ayer-side.svg" alt="life"></a>
+    <a href="cxz-blog.github.io/"><img src="images/外星人.jpg" alt="life"></a>
   </div>
   
   <ul class="nav nav-main">
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/">主页</a>
+      <a class="nav-item-link" href="cxz-blog.github.io/">主页</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/archives">归档</a>
+      <a class="nav-item-link" href="cxz-blog.github.io/archives">归档</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/categories">分类</a>
+      <a class="nav-item-link" href="cxz-blog.github.io/categories">分类</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/tags">标签</a>
+      <a class="nav-item-link" href="cxz-blog.github.io/tags">标签</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/null">摄影</a>
+      <a class="nav-item-link" href="cxz-blog.github.io/video">摄影</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/tags/%E6%97%85%E8%A1%8C/">旅行</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/-.github.io/2019/about">关于我</a>
+      <a class="nav-item-link" href="cxz-blog.github.io/about">关于我</a>
     </li>
     
   </ul>
@@ -485,7 +481,7 @@ static public function saveData($id,$arr)&#123;
       </a>
       
       
-      <a class="nav-item-link" target="_blank" href="/-.github.io/atom.xml" title="RSS Feed">
+      <a class="nav-item-link" target="_blank" href="cxz-blog.github.io/atom.xml" title="RSS Feed">
         <i class="ri-rss-line"></i>
       </a>
       
@@ -517,15 +513,15 @@ static public function saveData($id,$arr)&#123;
   </div>
 </div>
     
-<script src="/-.github.io/js/jquery-2.0.3.min.js"></script>
+<script src="cxz-blog.github.io/js/jquery-2.0.3.min.js"></script>
 
 
-<script src="/-.github.io/js/lazyload.min.js"></script>
+<script src="cxz-blog.github.io/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
 
 
-<script src="/-.github.io/js/tocbot.min.js"></script>
+<script src="cxz-blog.github.io/js/tocbot.min.js"></script>
 
 <script>
   tocbot.init({
@@ -545,7 +541,7 @@ static public function saveData($id,$arr)&#123;
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
 
-<script src="/-.github.io/dist/main.js"></script>
+<script src="cxz-blog.github.io/dist/main.js"></script>
 
 <!-- ImageViewer -->
 
@@ -687,7 +683,7 @@ static public function saveData($id,$arr)&#123;
 <!-- busuanzi  -->
 
 
-<script src="/-.github.io/js/busuanzi-2.3.pure.min.js"></script>
+<script src="cxz-blog.github.io/js/busuanzi-2.3.pure.min.js"></script>
 
 
 <!-- ClickLove -->
@@ -699,7 +695,7 @@ static public function saveData($id,$arr)&#123;
 <!-- CodeCopy -->
 
 
-<link rel="stylesheet" href="/-.github.io/css/clipboard.css">
+<link rel="stylesheet" href="cxz-blog.github.io/css/clipboard.css">
 
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
