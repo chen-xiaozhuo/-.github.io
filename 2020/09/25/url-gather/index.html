@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">274</span>
+            <span class="post-count">0</span>
         </span>
     </span>
 
@@ -98,17 +98,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>&lt;?php<a id="more"></a><br>/**</p>
-<ul>
-<li>Created by PhpStorm.</li>
-<li>User: 卓</li>
-<li>Date: 2020/8/27</li>
-<li>Time: 8:54</li>
-<li>/<br>//引入类文件<br>include “QueryList/QueryList.php”;<br>include “QueryList/phpQuery.php”;</li>
-</ul>
-<p>//设置采集的链接地址<br>$url=”<a target="_blank" rel="noopener" href="https://www.xs8.cn/&quot;">https://www.xs8.cn/&quot;</a>;</p>
-<p>//设置采集规则<br>$rules = [<br>    ‘img’=&gt;[‘.type-new-list.cf&gt;ul&gt;li&gt;.book-img&gt;a&gt;img’,’src’],//图片<br>    ‘title’=&gt;[‘.type-new-list.cf&gt;ul&gt;li&gt;.book-info&gt;h4&gt;a’,’text’],//标题<br>    ‘text’=&gt;[‘.type-new-list.cf&gt;ul&gt;li&gt;.book-info&gt;p’,’text’],//内容<br>    ‘author’=&gt;[‘.type-new-list.cf&gt;ul&gt;li&gt;.book-info&gt;.state-box.cf&gt;a’,’text’],<br>    ‘head’=&gt;[‘.type-new-list.cf&gt;ul&gt;li&gt;.book-info&gt;.state-box.cf&gt;a&gt;img’,’src’],<br>    ‘type’=&gt;[‘.type-new-list.cf&gt;ul&gt;li&gt;.book-info&gt;.state-box.cf&gt;i’,’text’],<br>];<br>$data =@ \QL\QueryList::Query($url,$rules)-&gt;data;<br>//print_r($data);<br>$m=new PDO(‘mysql:host=127.0.0.1;dbname=zhuo’,’root’,’123456’);<br>for($i=0;$i&lt;count($data);$i++){<br>//    print_r($data[$i][‘img’]);<br>    try{<br>        $m-&gt;setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);<br>        $m-&gt;beginTransaction();<br>        $sql=”insert into zhuo.<code>user</code> values(null,?,?,?,?,?,?)”;<br>        $query=$m-&gt;prepare($sql);//预处理<br>        $res=$query-&gt;execute([$data[$i][‘img’],$data[$i][‘title’],$data[$i][‘text’],$data[$i][‘author’],$data[$i][‘head’],$data[$i][‘type’]]);<br>        $m-&gt;commit();<br>    }catch(Exception $e){<br>        $e-&gt;rollBack();<br>    }<br>}</p>
-<p>if($res){<br>    header(‘refresh:1,url=index1.blade.php’);<br>}else{<br>    echo ‘失败’;<br>}</p>
+  <p><img src="/cxz-blog.github.io/2020/09/25/url-gather/20200121101729.png"><a id="more"></a><br><img src="/cxz-blog.github.io/2020/09/25/url-gather/1.jpg"></p>
+<hr>
  
       <!-- reward -->
       
@@ -191,6 +182,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/cxz-blog.github.io/2020/09/25/ceshi/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            ceshi
+          
+        </div>
+      </a>
     
     
       <a href="/cxz-blog.github.io/2020/09/25/thinkphp-1/" class="article-nav-link">

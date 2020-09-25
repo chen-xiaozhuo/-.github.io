@@ -98,7 +98,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>thinkphp<br>&lt;?php<a id="more"></a><br>declare (strict_types = 1);</p>
+  <p><img src="/cxz-blog.github.io/2020/09/25/thinkphp/thinkphp.jpg"><br>thinkphp<br>&lt;?php<a id="more"></a><br>declare (strict_types = 1);</p>
 <p>namespace app\controller;</p>
 <p>use app\model\staffmodel;<br>use liliuwei\think\Jump;<br>use think\facade\View;<br>use think\Request;<br>class staff<br>{<br>    /**<br>     * 显示资源列表<br>     *<br>     * @return \think\Response<br>     */<br>    use Jump;<br>    public function index()<br>    {<br>        //展示<br>        $name= staffmodel::select();<br>        return  View::fetch(‘gaotian/index’,[‘arr’=&gt;$name]);<br>    }</p>
 <pre><code>/**

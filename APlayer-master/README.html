@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    laravel  CRUD |  blog
+     blog
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -46,187 +46,97 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-摘录"
-  class="article article-type-post"
+  id="page-"
+  class="article article-type-page"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
 >
   <div class="article-inner">
-    
-    <header class="article-header">
        
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  laravel  CRUD
-</h1>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/cxz-blog.github.io/2020/09/23/%E6%91%98%E5%BD%95/" class="article-date">
-  <time datetime="2020-09-23T06:38:47.000Z" itemprop="datePublished">2020-09-23</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/cxz-blog.github.io/categories/laravel/">laravel</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">904</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-
-
-
-  
     <div class="article-entry" itemprop="articleBody">
        
-  <p> ===控制器===<a id="more"></a><br>&lt;?php<br>namespace App\Http\Controllers;<br>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;<br>class Test extends Controller<br>{<br>    //注册<br>    public function regData(Request $request){<br>        //验证器验证<br>        $validator = Validator::make($request-&gt;all(), [<br>            ‘name’ =&gt; ‘required’,<br>            ‘pwd’ =&gt; ‘required’,<br>            ‘phone’ =&gt; ‘required’,<br>            ‘qq’ =&gt; ‘required’,<br>        ]);</p>
-<pre><code>    if ($validator-&gt;fails()) &#123;
-        $msg=$validator-&gt;errors()-&gt;first();
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
-    &#125;
-    //拼写入库的数组
-    $arr[&#39;name&#39;]=$request[&#39;name&#39;];
-    $arr[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-    $arr[&#39;phone&#39;]=$request[&#39;phone&#39;];
-    $arr[&#39;qq&#39;]=$request[&#39;qq&#39;];
-    $data=Test1::regData($arr);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;注册成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;注册失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//登录
-public function login(Request $request)&#123;
-    //验证器验证
-    $validator = Validator::make($request-&gt;all(), [
-        &#39;name&#39; =&gt; &#39;required&#39;,
-        &#39;pwd&#39; =&gt; &#39;required&#39;,
-    ]);
+  <p align="center">
+<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fhu01y9uy7j305k04s3yc.jpg" alt="ADPlayer" width="100">
+</p>
+<h1 align="center">APlayer</h1>
 
-    if ($validator-&gt;fails()) &#123;
-        $msg=$validator-&gt;errors()-&gt;first();
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
-    &#125;
-    //拼写登录的数组
-    $arr[&#39;name&#39;]=$request[&#39;name&#39;];
-    $arr[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
+<blockquote>
+<p>Wow, such a lovely HTML5 music player</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/aplayer"><img src="https://img.shields.io/npm/v/aplayer.svg?style=flat-square" alt="npm"></a><br><a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/aplayer.svg?style=flat-square" alt="npm"></a><br><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/aplayer"><img src="https://img.shields.io/npm/dt/aplayer.svg?style=flat-square" alt="npm"></a><br><a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer/tree/master/dist"><img src="https://badge-size.herokuapp.com/MoePlayer/APlayer/master/dist/APlayer.min.js?compression=gzip&style=flat-square" alt="size"></a><br><a target="_blank" rel="noopener" href="https://travis-ci.org/MoePlayer/APlayer"><img src="https://img.shields.io/travis/MoePlayer/APlayer.svg?style=flat-square" alt="Travis"></a><br><a target="_blank" rel="noopener" href="https://david-dm.org/MoePlayer/APlayer#info=devDependencies"><img src="https://img.shields.io/david/dev/MoePlayer/aplayer.svg?style=flat-square" alt="devDependency Status"></a><br><a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer#donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square" alt="donate"></a></p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><img src="https://i.imgur.com/JDrJXCr.png" alt="image"></p>
+<p>APlayer is a lovely HTML5 music player.</p>
+<p><strong>APlayer supports:</strong></p>
+<ul>
+<li>Media formats - MP4 H.264 (AAC or MP3) - WAVE PCM - Ogg Theora Vorbis</li>
+<li>Features - Playlist - Lyrics</li>
+</ul>
+<p>Using APlayer on your project? <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer/issues/79">Let me know!</a></p>
+<p><strong><a target="_blank" rel="noopener" href="https://aplayer.js.org/">Docs</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://aplayer.js.org/#/zh-Hans/">中文文档</a></strong></p>
+<h2 id="Join-the-Discussion"><a href="#Join-the-Discussion" class="headerlink" title="Join the Discussion"></a>Join the Discussion</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://t.me/adplayer">Telegram Group</a></li>
+<li><a target="_blank" rel="noopener" href="https://shang.qq.com/wpa/qunwpa?idkey=bf22213ae0028a82e5adf3f286dfd4f01e0997dc9f1dcd8e831a0a85e799be17">QQ Group</a>: 415835947</li>
+</ul>
+<h2 id="Related-Projects"><a href="#Related-Projects" class="headerlink" title="Related Projects"></a>Related Projects</h2><h3 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/zgq354/APlayer-Typecho-Plugin">APlayer-Typecho-Plugin</a>: Typecho</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/grzhan/hexo-tag-aplayer">hexo-tag-aplayer</a>: Hexo</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/liwanglin12/Hermit-X">Hermit-X(APlayer for WordPress)</a>: WordPress</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kn007/APlayerHandle">APlayerHandle</a>: WordPress</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fghrsh/APlayer_for_Z-BlogPHP">APlayer_for_Z-BlogPHP</a>: Z-BlogPHP</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sabrinaluo/react-aplayer">react-aplayer</a>: React</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/SevenOutman/vue-aplayer">Vue-APlayer</a>: Vue</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MoeFE/vue-aplayer">vue-aplayer</a>: Vue</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Daryl-L/php-aplayer">php-aplayer</a>: PHP</li>
+</ul>
+<h3 id="Tooling"><a href="#Tooling" class="headerlink" title="Tooling"></a>Tooling</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Mashiro-Sorata/APlayer-Controler">APlayer-Controler</a>: controling tool</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS">MetingJS</a>: work with Meting music API</li>
+<li>Feel free to submit yours in <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer/issues/79"><code>Let me know!</code></a></li>
+</ul>
+<h2 id="Who-use-APlayer"><a href="#Who-use-APlayer" class="headerlink" title="Who use APlayer?"></a>Who use APlayer?</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/">bilibili</a>: 国内知名的视频弹幕网站</li>
+<li><a target="_blank" rel="noopener" href="https://hacpai.com/">黑客派</a>: 程序员和设计师的聚集地，一个活跃的小众社区</li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CC98%E8%AE%BA%E5%9D%9B">浙江大学 CC98 论坛</a>: 浙江大学校网内规模最大的论坛，中国各大学中较活跃的 BBS 之一</li>
+<li><a target="_blank" rel="noopener" href="http://jellyrue.com/">Jelly Rue</a>: Jelly Rue, an indie pop-rock band from Tartu.</li>
+<li><a target="_blank" rel="noopener" href="http://www.opusopus.co/">Opus</a>: An artist-exploration data visualization application</li>
+<li><a target="_blank" rel="noopener" href="http://www.chinaz.com/15year/index.html">站长之家</a>: 针对中文站点提供资讯、技术、资源、服务</li>
+<li><a target="_blank" rel="noopener" href="https://www.lovelivesupport.com/">LLSupport</a>: This site provides a lot of information about LoveLive</li>
+<li><a target="_blank" rel="noopener" href="https://www.lrcgc.com/diy">歌词千寻</a>: 每日更新的 LRC 歌词网站</li>
+<li><a target="_blank" rel="noopener" href="http://i.oppsu.cn/">iSearch</a>: 一个提供 iTunes 搜索,试听,高清专辑封面获取,查看最新音乐动态等综合性平台</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/MoeFE/Lyric">LRC 歌词编辑器</a>: 一款非常实用的在线 LRC 歌词编辑器</li>
+<li><a target="_blank" rel="noopener" href="https://aerostatica.ru/">Аэростатика</a></li>
+<li><a target="_blank" rel="noopener" href="https://healthdig.co/">HealthDig</a>: 每天只需两分钟的重点新闻资讯</li>
+<li>Feel free to submit yours in <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer/issues/79"><code>Let me know!</code></a></li>
+</ul>
+<h2 id="Current-Premium-Sponsors"><a href="#Current-Premium-Sponsors" class="headerlink" title="Current Premium Sponsors"></a>Current Premium Sponsors</h2><h3 id="Special-Sponsors"><a href="#Special-Sponsors" class="headerlink" title="Special Sponsors"></a>Special Sponsors</h3><a href="https://www.dogecloud.com/?ref=dplayer" target="_blank">
+    <img width="222px" src="https://i.imgur.com/BBKXPAp.png">
+</a>
+<a href="https://console.upyun.com/register/?invite=BkLZ2Xqob" target="_blank">
+    <img width="222px" src="https://imgur.com/apG1uKf.png">
+</a>
 
-    $arr2[&#39;qq&#39;]=$request[&#39;name&#39;];
-    $arr2[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-    $data=Test1::loginData($arr,$arr2);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;登录成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;登录失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//展示
-public function lists()&#123;
-    $data=Test1::listData();
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;展示成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;展示失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//删除
-public function delData(Request $request)&#123;
-    $data=Test1::delData($request[&#39;id&#39;]);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;删除成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;删除失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//详情
-public function infoData(Request $request)&#123;
-    $data=Test1::infoData($request[&#39;id&#39;]);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;查看详情成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;查看详情失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;
-//修改
-public function saveData(Request $request)&#123;
-    //验证器验证
-    $validator = Validator::make($request-&gt;all(), [
-        &#39;name&#39; =&gt; &#39;required&#39;,
-        &#39;pwd&#39; =&gt; &#39;required&#39;,
-        &#39;phone&#39; =&gt; &#39;required&#39;,
-        &#39;qq&#39; =&gt; &#39;required&#39;,
-        &#39;id&#39; =&gt; &#39;required&#39;,
-    ]);
-
-    if ($validator-&gt;fails()) &#123;
-        $msg=$validator-&gt;errors()-&gt;first();
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
-    &#125;
-    //拼写修改的数组
-    $id=$request[&#39;id&#39;];
-    $arr[&#39;name&#39;]=$request[&#39;name&#39;];
-    $arr[&#39;pwd&#39;]=md5($request[&#39;pwd&#39;]);
-    $arr[&#39;phone&#39;]=$request[&#39;phone&#39;];
-    $arr[&#39;qq&#39;]=$request[&#39;qq&#39;];
-    $data=Test1::saveData($id,$arr);
-    if ($data)&#123;
-        return [&#39;code&#39;=&gt;200,&#39;msg&#39;=&gt;&#39;修改成功&#39;,&#39;ruselt&#39;=&gt;$data];
-    &#125;else&#123;
-        return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;&#39;修改失败&#39;,&#39;ruselt&#39;=&gt;null];
-    &#125;
-&#125;</code></pre>
-<p>}</p>
-<p>===模型层===<br>&lt;?php</p>
-<p>namespace App;</p>
-<p>use Illuminate\Database\Eloquent\Model;</p>
-<p>class Test1 extends Model<br>{<br>    protected $table=’test’;<br>    public $timestamps=false;<br>    //注册方法<br>    static public function regData($arr){<br>        return self::insert($arr);<br>    }<br>    //登录<br>    static public function loginData($arr,$arr2){<br>        $res=self::where($arr)-&gt;first();</p>
-<pre><code>    $res2=self::where($arr2)-&gt;first();
-    if (empty($res)&amp;&amp;empty($res2))&#123;
-        return 0; //登录失败
-    &#125;else&#123;
-        if ($res) return $res;
-        if ($res2) return $res2;
-    &#125;
-&#125;
-//展示
-static public function listData()&#123;
-    return self::get();
-&#125;
-//删除
-static public function delData($id)&#123;
-    return self::where(&#39;id&#39;,&#39;=&#39;,$id)-&gt;delete();
-&#125;
-//详情
-static public function infoData($id)&#123;
-    return self::where(&#39;id&#39;,&#39;=&#39;,$id)-&gt;first();
-&#125;
-//修改
-static public function saveData($id,$arr)&#123;
-    return self::where(&#39;id&#39;,&#39;=&#39;,$id)-&gt;update($arr);
-&#125;</code></pre>
-<p>}</p>
-<p>===路由===<br>Route::post(‘regadd’,‘Test@regData’);//注册<br>Route::post(‘loginadd’,‘Test@login’);//登录<br>Route::get(‘list’,‘Test@lists’);//展示<br>Route::get(‘del’,‘Test@delData’);//删除<br>Route::get(‘info’,‘Test@infoData’);//详情<br>Route::post(‘save’,‘Test@saveData’);//修改</p>
-<hr>
+<h3 id="OpenCollective-backers"><a href="#OpenCollective-backers" class="headerlink" title="OpenCollective backers"></a>OpenCollective backers</h3><p><img src="https://opencollective.com/APlayer/backers.svg?width=890"></p>
+<h2 id="Contributors"><a href="#Contributors" class="headerlink" title="Contributors"></a>Contributors</h2><p>This project exists thanks to all the people who contribute.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer/graphs/contributors"><img src="https://opencollective.com/APlayer/contributors.svg?width=890"></a></p>
+<h2 id="Donate"><a href="#Donate" class="headerlink" title="Donate"></a>Donate</h2><p>APlayer is an MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing.</p>
+<h2 id="One-time-Donations"><a href="#One-time-Donations" class="headerlink" title="One-time Donations"></a>One-time Donations</h2><p>We accept donations through these channels:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.paypal.me/DIYgod">Paypal</a></li>
+<li><a target="_blank" rel="noopener" href="https://i.imgur.com/aq6PtWa.png">WeChat Pay</a></li>
+<li><a target="_blank" rel="noopener" href="https://i.imgur.com/wv1Pj2k.png">Alipay</a></li>
+<li>Bitcoin: 13CwQLHzPYm2tewNMSJBeArbbRM5NSmCD1</li>
+</ul>
+<h2 id="Recurring-Pledges"><a href="#Recurring-Pledges" class="headerlink" title="Recurring Pledges"></a>Recurring Pledges</h2><p>Recurring pledges come with exclusive perks, e.g. having your name or your company logo listed in the APlayer GitHub repository and this website.</p>
+<ul>
+<li>Become a backer or sponsor via <a target="_blank" rel="noopener" href="https://opencollective.com/aplayer">OpenCollective</a></li>
+<li>E-mail us: i#html.love</li>
+</ul>
+<h2 id="Author"><a href="#Author" class="headerlink" title="Author"></a>Author</h2><p><strong>APlayer</strong> © <a target="_blank" rel="noopener" href="https://github.com/DIYgod">DIYgod</a>, Released under the <a href="./LICENSE">MIT</a> License.<br><br>Authored and maintained by DIYgod with help from contributors (<a target="_blank" rel="noopener" href="https://github.com/DIYgod/APlayer/contributors">list</a>).</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://diygod.me/">Blog</a> · GitHub <a target="_blank" rel="noopener" href="https://github.com/DIYgod">@DIYgod</a> · Twitter <a target="_blank" rel="noopener" href="https://twitter.com/DIYgod">@DIYgod</a> · Telegram Channel <a target="_blank" rel="noopener" href="https://t.me/awesomeDIYgod">@awesomeDIYgod</a></p>
+</blockquote>
  
       <!-- reward -->
       
@@ -297,31 +207,15 @@ static public function saveData($id,$arr)&#123;
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cxz-blog.github.io/2020/09/23/%E6%91%98%E5%BD%95/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cxz-blog.github.io/APlayer-master/README.html" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/cxz-blog.github.io/tags/laravel/" rel="tag">laravel</a></li></ul>
-
     </footer>
   </div>
 
    
-  <nav class="article-nav">
-    
-      <a href="/cxz-blog.github.io/2020/09/24/b/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            git
-          
-        </div>
-      </a>
-    
-    
-  </nav>
-
    
 <!-- valine评论 -->
 <div id="vcomments-box">
@@ -371,7 +265,7 @@ static public function saveData($id,$arr)&#123;
 </style>
 
  
-     
+   
 </article>
 
 </section>
@@ -519,23 +413,6 @@ static public function saveData($id,$arr)&#123;
 <script src="/cxz-blog.github.io/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
-
-
-<script src="/cxz-blog.github.io/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: 'main',
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto'
-  });
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">

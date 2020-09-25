@@ -98,7 +98,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>&lt;?php<a id="more"></a><br>declare (strict_types = 1);<br>namespace app\controller;<br>use app\model\DiscountModel;<br>use liliuwei\think\Jump;<br>use think\facade\View;<br>use think\Request;</p>
+  <p><img src="/cxz-blog.github.io/2020/09/25/thinkphp-1/Banner.jpg"><br>&lt;?php<a id="more"></a><br>declare (strict_types = 1);<br>namespace app\controller;<br>use app\model\DiscountModel;<br>use liliuwei\think\Jump;<br>use think\facade\View;<br>use think\Request;</p>
 <p>class DiscountController<br>{<br>    /**<br>     * 显示资源列表<br>     *<br>     * @return \think\Response<br>     */<br>    use Jump;<br>    public function index(Request $request)<br>    {<br>        //添加<br>        if($request-&gt;isPost()){<br>            //判断表单是否是post提交<br>                $minimum=$request-&gt;param(‘minimum’);<br>            if(empty($minimum)){<br>                return ‘最低消费不能为空’;<br>            }<br>            $name=new DiscountModel();<br>            $name-&gt;name=$request[‘name’];<br>            $name-&gt;type=$request[‘type’];<br>            $name-&gt;minimum=$request[‘minimum’];<br>            $name-&gt;pattern=$request[‘pattern’];<br>            $name-&gt;period=$request[‘period’];<br>            $name-&gt;sum=$request[‘sum’];<br>            $name-&gt;rece=$request[‘rece’];<br>            $name-&gt;sort=$request[‘sort’];<br>            $name-&gt;save();<br>            if($name){<br>                return $this-&gt;success(‘注册成功’,’/list’);<br>            }else{<br>                return ‘失败’;<br>            }<br>        }<br>        return View::fetch(‘discount/index’);<br>    }</p>
 <pre><code>/**
  * 显示创建资源表单页.
