@@ -7,11 +7,11 @@
 <head>
   <meta charset="utf-8" />
     
-  <meta name="description" content="blog" />
+  <meta name="description" content="Chen" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    ceshi |  blog
+    thinkphp6/添加、软删除、恢复、修改 |  Chen
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -57,7 +57,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  ceshi
+  thinkphp6/添加、软删除、恢复、修改
 </h1>
  
 
@@ -66,7 +66,11 @@
     <div class="article-meta">
       <a href="/cxz-blog.github.io/2020/09/25/ceshi/" class="article-date">
   <time datetime="2020-09-25T06:09:13.000Z" itemprop="datePublished">2020-09-25</time>
-</a>   
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/cxz-blog.github.io/categories/git/">git</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
@@ -88,14 +92,109 @@
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="/cxz-blog.github.io/2020/09/25/ceshi/20190925164508.png" alt="20190925164508"></p>
- 
+  <hr>
+<h2 id><a href="#" class="headerlink" title></a><img src="/cxz-blog.github.io/2020/09/25/ceshi/20190925164508.png" alt="20190925164508"><a id="more"></a></h2><tmp>
+<?php
+
+<p>namespace app\admin\controller;<br>use think\Controller;<br>use think\Db;<br>use think\facade\Session;<br>use think\facade\View;<br>use think\Request;<br>use tools\jwt\Gettoken;<br>use tools\jwt\Token;<p></p>
+<p>class Login extends Controller<br>{<br>    /**<br>     * 显示资源列表<br>     *<br>     * @return \think\Response<br>     */<br>    public function index()<br>    {<br>        //<br>        $table=Db::table(‘tp5_role’)-&gt;select();<br>        return view(‘index’,[‘arr’=&gt;$table]);<br>    }</p>
+<pre><code>/**
+ * 显示创建资源表单页.
+ *
+ * @return \think\Response
+ */
+public function create(Request $request)
+&#123;
+    //
+    $name=$request-&gt;post();</code></pre>
+<p>//        return json($name);<br>        $validate = new \app\admin\validate\login();<br>        if (!$validate-&gt;check($name)) {<br>            dump($validate-&gt;getError());<br>            return ;<br>        }<br>        $name[‘password’]=encrypt_password($name[‘password’]);<br>        $table=new \app\admin\model\login();<br>        $data=$table-&gt;insert($name);<br>        if($data){<br>//            return View::fetch(‘注册成功’,’/read’);<br>            return $this-&gt;success(‘注册成功’,’read’);<br>            return ‘入库成功’;<br>        }else{<br>            return ‘入库失败’;<br>        }<br>    }</p>
+<pre><code>/**
+ * 保存新建的资源
+ *
+ * @param  \think\Request  $request
+ * @return \think\Response
+ */
+public function save(Request $request)
+&#123;
+    //
+    if($request-&gt;isGet())&#123;
+        $n=$request-&gt;get(&#39;name&#39;);
+        $table=new \app\admin\model\login();
+        $table1=$table-&gt;where(&#39;auth_name&#39;,&#39;like&#39;,&#39;%&#39;.$n.&#39;%&#39;)-&gt;paginate(2,false,[&#39;query&#39; =&gt; [&#39;name&#39;=&gt;$n]]);</code></pre>
+<p>//            $page=$table1-&gt;render();<br>//            return $page;exit;<br>            $name=Db::table(‘tp5_role’)-&gt;select();<br>            $arr=[];<br>            foreach($name as $k=&gt;$v){<br>                $arr[$v[‘role_pid’]]=$v[‘role_name’];<br>            }<br>            return view(‘role_list’,[‘arr’=&gt;$table1,’str’=&gt;$arr,’name’=&gt;$n]);<br>        }<br>//        return view(‘role_list’);<br>//        $table=new \app\Login\model\login();<br>//        $table1=$table-&gt;paginate(4);<br>//        $name=Db::table(‘tp5_role’)-&gt;select();<br>//        $arr=[];<br>//        foreach($name as $k=&gt;$v){<br>//            $arr[$v[‘role_pid’]]=$v[‘role_name’];<br>//        }<br>////        print_r($table1-&gt;toArray());return ;<br>////        print_r($arr);return;<br>//        return view(‘role_list’,[‘arr’=&gt;$table1,’str’=&gt;$arr]);<br>    }</p>
+<pre><code>/**
+ * 显示指定的资源
+ *
+ * @param  int  $id
+ * @return \think\Response
+ */
+
+public function read(Request $request)
+&#123;
+    //</code></pre>
+<p>//        if($request-&gt;isPost()){<br>//            $arr[‘auth_name’]=$request-&gt;param(‘username’);</p>
+<pre><code>    $arr=$request-&gt;input();</code></pre>
+<p>//        $arr[‘password’]=encrypt_password($request-&gt;param(‘password’));<br>//            $code=$request-&gt;param(‘code’);<br>//            if(!captcha_check($code)){<br>//                return ‘输入的验证码有误’;<br>//            }<br>//            $token=Token::getToken(Session::get(‘id’));<br>            $table=new \app\admin\model\login();<br>            $table1=$table-&gt;where($arr)-&gt;find();<br>            $token=new Gettoken();<br>            $token1=$token-&gt;Token($table1[‘id’]);<br>            if($table1){<br>                Session::set(‘id’,$table1[‘id’]);<br>                return json([‘code’=&gt;200,’massage’=&gt;’登录成功’,’result’=&gt;$table1,’jwtt’=&gt;$token1]);<br>            }else{<br>               return ‘账号密码不对’;<br>            }</p>
+<p>//        }<br>//        return view(‘login’);<br>    }</p>
+<pre><code>/**
+ * 显示编辑资源表单页.
+ *
+ * @param  int  $id
+ * @return \think\Response
+ */
+public function edit(Request $request)
+&#123;
+    //
+    $id=$request-&gt;param(&#39;id&#39;);
+    $table=\app\admin\model\login::destroy($id);;
+    if($table)&#123;
+        return redirect(&#39;save&#39;);
+    &#125;else&#123;
+        return &#39;删除失败&#39;;
+    &#125;
+&#125;
+
+/**
+ * 保存更新的资源
+ *
+ * @param  \think\Request  $request
+ * @param  int  $id
+ * @return \think\Response
+ */
+public function update(Request $request)
+&#123;
+    //
+    $id=$request-&gt;param(&#39;id&#39;);
+    if($request-&gt;isPost())&#123;
+        $data=$request-&gt;post();
+        $id=$data[&#39;id&#39;];</code></pre>
+<p>//            return json($data);<br>            $table=new \app\admin\model\login();<br>            $data1=$table-&gt;where(‘id’,$id)-&gt;update($data);<br>            if($data1){<br>                return redirect(‘<a target="_blank" rel="noopener" href="http://www.tpp.com/Login/login/save&#39;">http://www.tpp.com/Login/login/save&#39;</a>);<br>            }else{<br>                return ‘修改失败’;<br>            }<br>        }<br>        $table=new \app\admin\model\login();<br>        $data=$table-&gt;where(‘id’,$id)-&gt;find();<br>        $data1=Db::table(‘tp5_role’)-&gt;select();<br>        $arr=[];<br>        foreach($data1 as $v){<br>            $arr[$v[‘role_id’]]=$v[‘role_name’];<br>        }<br>//        print_r($arr);<br>//        exit();<br>        return view(‘update’,[‘arr’=&gt;$data,’str’=&gt;$arr,’data’=&gt;$data1]);</p>
+<pre><code>&#125;
+
+/**
+ * 删除指定资源
+ *
+ * @param  int  $id
+ * @return \think\Response
+ */
+public function delete()
+&#123;
+    //
+    $table=new \app\admin\model\login();
+    $data=$table-&gt;onlyTrashed()-&gt;paginate(2);
+    return view(&#39;delete&#39;,[&#39;arr&#39;=&gt;$data]);
+&#125;
+public function undelete($id)&#123;</code></pre>
+<p>//        $table=new \app\Login\model\login();<br>        $user=\app\admin\model\login::onlyTrashed()-&gt;find($id);<br>        $user-&gt;restore();<br>        $this-&gt;success(‘恢复成功’,’save’);<br>    }<br>}</p>
+</tmp> 
       <!-- reward -->
       
       <div id="reword-out">
@@ -170,6 +269,8 @@
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/cxz-blog.github.io/tags/git/" rel="tag">git</a></li></ul>
+
     </footer>
   </div>
 
@@ -180,7 +281,7 @@
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            ceshi
+            tp生成二维码
           
         </div>
       </a>
@@ -312,7 +413,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/cxz-blog.github.io/"><img src="images/外星人.jpg" alt="life"></a>
+    <a href="/cxz-blog.github.io/"><img src="images/外星人.jpg" alt="Zhuo"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -563,6 +664,10 @@
 
 <!-- ClickLove -->
 
+
+<script src="/cxz-blog.github.io/js/clickLove.js"></script>
+
+
 <!-- ClickBoom1 -->
 
 <!-- ClickBoom2 -->
@@ -629,6 +734,10 @@
 
 
 <!-- CanvasBackground -->
+
+
+<script src="/cxz-blog.github.io/js/dz.js"></script>
+
 
 
     

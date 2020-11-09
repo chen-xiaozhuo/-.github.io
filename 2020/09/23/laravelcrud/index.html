@@ -7,11 +7,11 @@
 <head>
   <meta charset="utf-8" />
     
-  <meta name="description" content="blog" />
+  <meta name="description" content="Chen" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    laravel  CRUD |  blog
+    laravel  CRUD |  Chen
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -98,7 +98,9 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="/cxz-blog.github.io/2020/09/23/laravelcrud/laravelcrud.jpg"><br> ===控制器===<a id="more"></a><br>&lt;?php<br>namespace App\Http\Controllers;<br>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;<br>class Test extends Controller<br>{<br>    //注册<br>    public function regData(Request $request){<br>        //验证器验证<br>        $validator = Validator::make($request-&gt;all(), [<br>            ‘name’ =&gt; ‘required’,<br>            ‘pwd’ =&gt; ‘required’,<br>            ‘phone’ =&gt; ‘required’,<br>            ‘qq’ =&gt; ‘required’,<br>        ]);</p>
+  <p><img src="/cxz-blog.github.io/2020/09/23/laravelcrud/20200121101729.png"></p>
+<a id="more"></a>
+<p> ===控制器===<br>&lt;?php<br>namespace App\Http\Controllers;<br>use App\Test1;<br>use Illuminate\Http\Request;<br>use Validator;<br>class Test extends Controller<br>{<br>    //注册<br>    public function regData(Request $request){<br>        //验证器验证<br>        $validator = Validator::make($request-&gt;all(), [<br>            ‘name’ =&gt; ‘required’,<br>            ‘pwd’ =&gt; ‘required’,<br>            ‘phone’ =&gt; ‘required’,<br>            ‘qq’ =&gt; ‘required’,<br>        ]);</p>
 <pre><code>    if ($validator-&gt;fails()) &#123;
         $msg=$validator-&gt;errors()-&gt;first();
         return [&#39;code&#39;=&gt;201,&#39;msg&#39;=&gt;$msg,&#39;ruselt&#39;=&gt;null];
@@ -310,11 +312,11 @@ static public function saveData($id,$arr)&#123;
    
   <nav class="article-nav">
     
-      <a href="/cxz-blog.github.io/2020/09/24/b/" class="article-nav-link">
+      <a href="/cxz-blog.github.io/2020/09/24/a/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            git
+            三级联动
           
         </div>
       </a>
@@ -441,7 +443,7 @@ static public function saveData($id,$arr)&#123;
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/cxz-blog.github.io/"><img src="images/外星人.jpg" alt="life"></a>
+    <a href="/cxz-blog.github.io/"><img src="images/外星人.jpg" alt="Zhuo"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -692,6 +694,10 @@ static public function saveData($id,$arr)&#123;
 
 <!-- ClickLove -->
 
+
+<script src="/cxz-blog.github.io/js/clickLove.js"></script>
+
+
 <!-- ClickBoom1 -->
 
 <!-- ClickBoom2 -->
@@ -758,6 +764,10 @@ static public function saveData($id,$arr)&#123;
 
 
 <!-- CanvasBackground -->
+
+
+<script src="/cxz-blog.github.io/js/dz.js"></script>
+
 
 
     
